@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+img {
+  width:48%;
+  height:auto;
+}
+
+form {
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #22A3DD;
+}
+
+submit{
+  margin: 1rem;
+}
+
+input{
+  margin: 1rem;
+}
+
+.todo-list{
+  position:relative;
+  font-size: 0.5rem;
+  bottom:20rem;
+  left:12rem;
+  width: 100%;
+  align-self: center;
+}
+
+button{
+  font-size: 0.5rem;
+  margin: 1px;
+}
+
+.left {
+  margin-left: 5rem;
+}

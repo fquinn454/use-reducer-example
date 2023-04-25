@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react';
 import Todo from './components/Todo'
 import './App.css';
+import notebook from './images/notebook.png'
 
 export const ACTIONS = {
   ADD_TODO: 'add-todo',
@@ -48,14 +49,23 @@ function App() {
   console.log(todos);
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input type='text' value={name} onChange={e => setName(e.target.value)} />
-      </form>
-      {todos.map(todo => {
-        return <Todo key={todo.id} todo={todo} dispatch={dispatch} />
-      })}
-    </>
+    <div>
+      <div className='app'>
+        <img src={notebook} alt='Spiral bound notebook on wooden table' />
+        <form onSubmit={handleSubmit}>
+          <label for='name'>Add an item to your ToDo List</label>
+          <input type='text' id='name' value={name} onChange={e => setName(e.target.value)} />
+          <button type="submit" >Add ToDo</button>
+        </form>
+      </div>
+      <div className='todo-list'>
+        <h2>To Do ...</h2>
+        {todos.map(todo => {
+            return <Todo key={todo.id} todo={todo} dispatch={dispatch} />
+          })}
+      </div> 
+
+    </div>
   )
 }
 

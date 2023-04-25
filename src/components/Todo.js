@@ -1,14 +1,16 @@
 import React from 'react'
 import { ACTIONS } from '../App'
+import { FaTrash } from 'react-icons/fa'
+import { IoIosSwitch } from 'react-icons/io'
 
 function Todo({todo, dispatch}){
     return(
-        <div>
+        <div className='flexbox'>
             <span style={{color: todo.complete ? '#AAA' : '#000'}}>
                 {todo.name}
             </span>
-            <button onClick= {() => dispatch({type:ACTIONS.TOGGLE_TODO, payload: {id: todo.id }})}>Toggle</button>
-            <button onClick= {() => dispatch({type:ACTIONS.DELETE_TODO, payload: {id: todo.id }})}>Delete</button>
+            <button className='left' onClick= {() => dispatch({type:ACTIONS.TOGGLE_TODO, payload: {id: todo.id }})}><IoIosSwitch /></button>
+            <button onClick= {() => dispatch({type:ACTIONS.DELETE_TODO, payload: {id: todo.id }})}><FaTrash /></button>
         </div>
     )
 }
